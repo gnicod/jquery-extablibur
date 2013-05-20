@@ -27,8 +27,9 @@ Extablibur.prototype = {
 
 			   this.table.find("tbody tr").each(function(){
 				   for(var i=0;i<_this.options.toShrink;i++){
-					   var col   = i[0];
-					   var shval = i[1];
+					   var tabShrink = this.options.options.toShrink[i];
+					   var col   = tabShrink[0];
+					   var shval = tabShrink[1];
 					   var td = $(($(this).find('td')[col]));
 					   var fulltext = td.text();
 					   td.html(fulltext.substr(0,shval)+"<span class='ext_longtd ext_longtd_h'>"+fulltext.substr(val,fulltext.length)+"</span>");
